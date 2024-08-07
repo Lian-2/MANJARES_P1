@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React Example</title> 
+    <!-- Load React from CDN -->
+    <script 
+src="https://unpkg.com/react@18/umd/react.development.js"
+crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-
+dom.development.js" crossorigin></script>
+    <script
+src="https://unpkg.com/@babel/standalone/babel.min.js">
+</script>
+</head>
+<body>
+	<div style="background: red; ">
+		<h4 style="color: blue;">ReactJs Form example</h4>
+	</div>
+
+	<div id="root"></div>
+	<h3 id="r">..</h3>
+
+	<script type="text/babel">
+         //Create a component with a form to prompt user inputs
+       
+       function MyForm() {
+        	const [name, setName] = React.useState("");
+        	const [course, setCourse] = React.useState("");
+        	const [location, setLocation] = React.useState("");
+           
+        function handleSubmit() {
+        	event.preventDefault();
+        	alert(`Name: ${name}\nCourse:${course}\nLocation: ${location}`);
+        	document.getElementaryById ("r") .innertext =`${name} ${course} ${location}`;
+        }
+
+        return (
+             <form onSubmit= {handleSubmit}>
+             	    <label>
+             		Name:
+             		<input 
+             		    type="text"
+             		    value={name}
+             		    onChange={(e) =>
+setName(e.target.value)}
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                    	Course:
+                      <input 
+             		    type="text"
+             		    value={course}
+             		    onChange={(e) =>
+setCourse (e.target.value)}
+                           />
+                    </label>
+                    <br />
+
+                    <label>
+                    	Location:
+                      <input 
+             		    type="text"
+             		    value={location}
+             		    onChange={(e) =>
+setLocation (e.target.value)}
+                           />
+                    </label>
+                    <br />
+
+                    <button type="submit">Ipasa</button>
+                </form>
+            );
+        }
+
+        // Render the component to the page
+        ReactDOM.render(<MyForm />,
+    document.getElementById("root"));
+        </script>
+</body>
+</html>
+
+   
